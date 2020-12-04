@@ -16,6 +16,7 @@ protocol MOAttributedTextViewDelegate {
 
 final class MOAttributedTextView: UITextView {
     var moDelegate: MOAttributedTextViewDelegate?
+    var moIsOpen: Bool = false
     var moAllText: String = ""
     var moLessLine: Int = 3 // rows for close status
     var moOpenText: String = "More"
@@ -43,10 +44,10 @@ final class MOAttributedTextView: UITextView {
     
     // according to set to show text
     private func mo_reloadText() {
-        if mo_isOpen && mo_allLine > moLessLine {
-            mo_openTextAction()
-        } else {
+        if mo_allLine > moLessLine && !moIsOpen {
             mo_closeTextAction()
+        } else {
+            mo_openTextAction()
         }
     }
     
@@ -61,7 +62,7 @@ final class MOAttributedTextView: UITextView {
         attributedString.addAttribute(.link, value: kMoClickUrlString, range: linkRange)
         attributedText = attributedString
         // notify delegate
-        moDelegate?.moTextViewHeight(mo_isOpen, mo_openHeight)
+        moDelegate?.moTextViewHeight(moIsOpen, mo_openHeight)
     }
     
     // MARK: - Close text
@@ -81,7 +82,7 @@ final class MOAttributedTextView: UITextView {
         attributedString.addAttribute(.link, value: kMoClickUrlString, range: linkRange)
         attributedText = attributedString
         // notify delegate
-        moDelegate?.moTextViewHeight(mo_isOpen, mo_closeHeight)
+        moDelegate?.moTextViewHeight(moIsOpen, mo_closeHeight)
     }
     
     // MARK: - calculate some propertys
@@ -120,7 +121,6 @@ final class MOAttributedTextView: UITextView {
         return String(lineString)
     }
     private var mo_font: UIFont = .systemFont(ofSize: 16)
-    private var mo_isOpen: Bool = false
     private var mo_allLine: Int = 0
     private var mo_lineHeight: CGFloat = 0.0
     private var mo_closeHeight: CGFloat = 0.0
@@ -137,7 +137,7 @@ extension MOAttributedTextView: UITextViewDelegate {
     @available(iOS 10.0, *)
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
         if URL.absoluteString == kMoClickUrlString { // click open / close
-            mo_isOpen = !mo_isOpen
+            moIsOpen = !moIsOpen
             mo_reloadText()
             return false
         }
