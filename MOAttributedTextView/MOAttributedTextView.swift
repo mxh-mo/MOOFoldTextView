@@ -98,9 +98,9 @@ final class MOAttributedTextView: UITextView {
         mo_allLine = Int(floor(height / mo_font.lineHeight))
         mo_openHeight = CGFloat(mo_allLine) * mo_lineHeight
         if mo_allLine > moLessLine {
-            mo_closeHeight = mo_openHeight
-        } else {
             mo_closeHeight = CGFloat(moLessLine) * mo_lineHeight
+        } else {
+            mo_closeHeight = mo_openHeight
         }
     }
     
