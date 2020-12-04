@@ -1,6 +1,6 @@
 # MOAttributedTextView
 ![image](https://github.com/moxiaohui/MOAttributedTextView/blob/main/openAndClose.gif)
-
+ 
 
 # How to use
 
