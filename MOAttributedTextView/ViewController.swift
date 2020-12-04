@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController, MOAttributedTextViewDelegate {
     
-    var mxhTextView: MOAttributedTextView = MOAttributedTextView(frame: CGRect(x: 20, y: 100, width: 300, height: 300))
+    var moTextView: MOAttributedTextView = MOAttributedTextView(frame: CGRect(x: 20, y: 100, width: 300, height: 300))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,21 +25,21 @@ class ViewController: UIViewController, MOAttributedTextViewDelegate {
         pargraphStyle.lineSpacing = 10
         
         // example
-        mxhTextView.moDelegate = self
-        mxhTextView.moLessLine = 3 // defaut：3
-        mxhTextView.moAllText = allText
-        mxhTextView.moOpenText = "More" // defaut：More
-        mxhTextView.moCloseText = "Close" // defaut：Close (if not, set "")
-        mxhTextView.moAttributs = attributs // font defaut：.systemFont(ofSize: 16)
-        mxhTextView.moParagraph = pargraphStyle // defaut：NSMutableParagraphStyle()
-        mxhTextView.backgroundColor = .cyan
-        mxhTextView.moReloadTextView()
-        view.addSubview(mxhTextView)
+        moTextView.moDelegate = self
+        moTextView.moLessLine = 3 // defaut：3
+        moTextView.moAllText = allText
+        moTextView.moOpenText = "More" // defaut：More
+        moTextView.moCloseText = "Close" // defaut：Close (if not, set "")
+        moTextView.moAttributs = attributs // font defaut：.systemFont(ofSize: 16)
+        moTextView.moParagraph = pargraphStyle // defaut：NSMutableParagraphStyle()
+        moTextView.backgroundColor = .cyan
+        moTextView.moReloadTextView()
+        view.addSubview(moTextView)
     }
     
     // MARK: - MOAttributedTextViewDelegate
     func moTextViewHeight(_ isOpen: Bool, _ height: CGFloat) {
-        self.mxhTextView.frame = CGRect(x: 20, y: 100, width: 300, height: height)
+        self.moTextView.frame = CGRect(x: 20, y: 100, width: 300, height: height)
     }
 }
 

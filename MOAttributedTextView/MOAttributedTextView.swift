@@ -125,7 +125,7 @@ final class MOAttributedTextView: UITextView {
     private var mo_lineHeight: CGFloat = 0.0
     private var mo_closeHeight: CGFloat = 0.0
     private var mo_openHeight: CGFloat = 0.0
-    private let kMoClickUrlString: String = "com.mxh.mxhTextView.isOpen"
+    private let kMoClickUrlString: String = "com.mxh.moTextView.isOpen"
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
