@@ -16,8 +16,8 @@ protocol MOAttributedTextViewDelegate {
 
 final class MOAttributedTextView: UITextView {
     var moDelegate: MOAttributedTextViewDelegate?
-    var moIsOpen: Bool = false
     var moAllText: String = ""
+    var moIsOpen: Bool = false
     var moLessLine: Int = 3 // rows for close status
     var moOpenText: String = "More"
     var moCloseText: String = "Close"
@@ -43,7 +43,7 @@ final class MOAttributedTextView: UITextView {
     }
     
     // according to set to show text
-    private func mo_reloadText() {
+    func mo_reloadText() {
         if mo_allLine > moLessLine && !moIsOpen {
             mo_closeTextAction()
         } else {
@@ -70,7 +70,7 @@ final class MOAttributedTextView: UITextView {
         // get the previese lessline string
         let preLessLineText = mo_preLessLineString()
         // cut the same text as openText, then + openText
-        let startIndex = preLessLineText.index(preLessLineText.endIndex, offsetBy: -moOpenText.count)
+        let startIndex = preLessLineText.index(preLessLineText.endIndex, offsetBy: -(moOpenText.count+2))
         let endIndex = preLessLineText.endIndex
         let range = startIndex ..< endIndex
         let needShowText = preLessLineText.replacingCharacters(in: range, with: moOpenText)
@@ -91,13 +91,17 @@ final class MOAttributedTextView: UITextView {
         mo_font = moAttributs[.font] as? UIFont ?? .systemFont(ofSize: 16)
         font = mo_font
         mo_lineHeight = moParagraph.lineSpacing + mo_font.lineHeight
-        mo_closeHeight = CGFloat(moLessLine) * mo_lineHeight
         text = moAllText + moCloseText
         // get height according font and width
         let height = sizeThatFits(CGSize(width: frame.size.width, height: CGFloat.greatestFiniteMagnitude)).height
         // get line number according height and lineHeight
         mo_allLine = Int(floor(height / mo_font.lineHeight))
         mo_openHeight = CGFloat(mo_allLine) * mo_lineHeight
+        if mo_allLine > moLessLine {
+            mo_closeHeight = mo_openHeight
+        } else {
+            mo_closeHeight = CGFloat(moLessLine) * mo_lineHeight
+        }
     }
     
     // MARK: - get the first less lines of string
@@ -128,6 +132,22 @@ final class MOAttributedTextView: UITextView {
     private let kMoClickUrlString: String = "com.mxh.moTextView.isOpen"
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    // if you need can use this method calculate open and close status height
+    // You can delete this method if you don't need it
+    class func calculateHeight(text: String, closeText: String, font: UIFont, lineSpacing: CGFloat, width: CGFloat, lessLine: Int, closure: (_ closeHeight: CGFloat, _ openHeight: CGFloat) -> Void) {
+        let lineHeight = lineSpacing + font.lineHeight
+        let rect = NSString(string: text + closeText).boundingRect(with: CGSize(width: width-8, height: CGFloat.greatestFiniteMagnitude), options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
+        // get height according font and width
+        let height = rect.height
+        // get line number according height and lineHeight
+        let allLine = Int(floor(height / font.lineHeight))
+        let openHeight = CGFloat(allLine) * lineHeight
+        var closeHeight = openHeight
+        if lessLine < allLine {
+            closeHeight = CGFloat(lessLine) * lineHeight
+        }
+        closure(closeHeight, openHeight)
     }
 }
 
