@@ -134,6 +134,7 @@ final class MOAttributedTextView: UITextView {
 // If other agents need to be implemented, they can be forwarded here
 extension MOAttributedTextView: UITextViewDelegate {
     // MARK: - click textView link range
+    @available(iOS 10.0, *)
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
         if URL.absoluteString == kMoClickUrlString { // click open / close
             mo_isOpen = !mo_isOpen
