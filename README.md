@@ -16,7 +16,14 @@ class ViewController: UIViewController, MOAttributedTextViewDelegate {
         super.viewDidLoad()
         
         let font: UIFont = .systemFont(ofSize: 16)
-        let allText = "Swift is a type-safe language, which means the language helps you to be clear about the types of values your code can work with. If part of your code requires a String, type safety prevents you from passing it an Int by mistake. Likewise, type safety prevents you from accidentally passing an optional String"
+        let allText =
+          """
+          Swift is a type-safe language, which means the language helps you to\
+          be clear about the types of values your code can work with.\
+          If part of your code requires a String, type safety prevents\
+          you from passing it an Int by mistake. Likewise, type safety\
+          prevents you from accidentally passing an optional String
+          """
 
         let attributs: [NSAttributedString.Key : Any] = [
           .foregroundColor: UIColor.black,
