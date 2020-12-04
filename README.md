@@ -1,7 +1,6 @@
 # MOAttributedTextView
-<video id="video" controls="" preload="none" poster=" ">
-      <source id="mp4" src="https://github.com/moxiaohui/MOAttributedTextView/blob/main/openAndClose.mp4" type="video/mp4">
-</video>
+![image](https://github.com/moxiaohui/MOAttributedTextView/blob/main/openAndClose.gif)
+
 
 # How to use
 
