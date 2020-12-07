@@ -10,8 +10,9 @@
 
 import UIKit
 
-protocol MOAttributedTextViewDelegate {
-    func moTextViewHeight(_ isOpen: Bool, _ height: CGFloat)
+@objc protocol MOAttributedTextViewDelegate {
+    @objc optional func moTapTextView(_ isOpen: Bool)
+    @objc optional func moTextViewHeightChanged(_ height: CGFloat)
 }
 
 final class MOAttributedTextView: UITextView {
@@ -62,7 +63,7 @@ final class MOAttributedTextView: UITextView {
         attributedString.addAttribute(.link, value: kMoClickUrlString, range: linkRange)
         attributedText = attributedString
         // notify delegate
-        moDelegate?.moTextViewHeight(moIsOpen, mo_openHeight)
+        moDelegate?.moTextViewHeightChanged?(mo_openHeight)
     }
     
     // MARK: - Close text
@@ -82,7 +83,7 @@ final class MOAttributedTextView: UITextView {
         attributedString.addAttribute(.link, value: kMoClickUrlString, range: linkRange)
         attributedText = attributedString
         // notify delegate
-        moDelegate?.moTextViewHeight(moIsOpen, mo_closeHeight)
+        moDelegate?.moTextViewHeightChanged?(mo_closeHeight)
     }
     
     // MARK: - calculate some propertys
@@ -158,6 +159,7 @@ extension MOAttributedTextView: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
         if URL.absoluteString == kMoClickUrlString { // click open / close
             moIsOpen = !moIsOpen
+            moDelegate?.moTapTextView?(moIsOpen)
             mo_reloadText()
             return false
         }

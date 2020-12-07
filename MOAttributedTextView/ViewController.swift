@@ -7,49 +7,36 @@
 
 import UIKit
 
-class ViewController: UIViewController, MOAttributedTextViewDelegate {
-    
-    var moTextView: MOAttributedTextView = MOAttributedTextView(frame: CGRect(x: 20, y: 100, width: 300, height: 300))
+class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let font: UIFont = .systemFont(ofSize: 16)
-        let allText =
-            """
-            Swift is a type-safe language, which means the language helps you to be clear about\
-             the types of values your code can work with. If part of your code requires a String,\
-            type safety prevents you from passing it an Int by mistake. Likewise, type safety\
-            prevents you from accidentally passing an optional String
-            """
+        // 1. textView 内部交互控制 显示 or 收起
+        let test1Btn = UIButton(type: .custom)
+        test1Btn.setTitle("Test1", for: .normal)
+        test1Btn.setTitleColor(.white, for: .normal)
+        test1Btn.frame = CGRect(x: 20, y: 100, width: 60, height: 44)
+        test1Btn.addTarget(self, action: #selector(clickTest1Btn), for: .touchUpInside)
+        test1Btn.backgroundColor = .red
+        view.addSubview(test1Btn)
         
-        let attributs: [NSAttributedString.Key : Any] = [
-          .foregroundColor: UIColor.black,
-          .font: font
-        ]
-        let pargraphStyle = NSMutableParagraphStyle()
-        pargraphStyle.lineSpacing = 10
-        
-        // example
-        moTextView.moDelegate = self
-        moTextView.moLessLine = 3 // defaut：3
-        moTextView.moAllText = allText
-        moTextView.moOpenText = "More" // defaut：More
-        moTextView.moCloseText = "Close" // defaut：Close (if not, set "")
-        moTextView.moAttributs = attributs // font defaut：.systemFont(ofSize: 16)
-        moTextView.moParagraph = pargraphStyle // defaut：NSMutableParagraphStyle()
-        moTextView.backgroundColor = .cyan
-        moTextView.moReloadTextView()
-        view.addSubview(moTextView)
+        // 2. 先计算出高度 外包设置 显示 or 收起 (方便UITableViewCell里使用)
+        let test2Btn = UIButton(type: .custom)
+        test2Btn.setTitle("Test2", for: .normal)
+        test2Btn.setTitleColor(.white, for: .normal)
+        test2Btn.frame = CGRect(x: 100, y: 100, width: 60, height: 44)
+        test2Btn.addTarget(self, action: #selector(clickTest2Btn), for: .touchUpInside)
+        test2Btn.backgroundColor = .red
+        view.addSubview(test2Btn)
     }
     
-    // MARK: - MOAttributedTextViewDelegate
-    func moTextViewHeight(_ isOpen: Bool, _ height: CGFloat) {
-        self.moTextView.frame = CGRect(x: 20, y: 100, width: 300, height: height)
+    
+    @objc func clickTest1Btn() {
+        navigationController?.pushViewController(MOTest1ViewController(), animated: true)
     }
+    
+    @objc func clickTest2Btn() {
+        navigationController?.pushViewController(MOTest2ViewController(), animated: true)
+    }    
 }
-
-
-// 参考：iOS 富文本添加点击事件 https://www.jianshu.com/p/480db0cc7380
-// 参考：Ranges in Swift explained with code examples https://www.avanderlee.com/swift/ranges-explained/
-// 参考：ios获取UILabel每行显示的文字 https://www.jianshu.com/p/65a07b6013c7

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		949B30B47449AC74DB08EA5C /* Pods_MOAttributedTextView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B533420932D547113252FEA /* Pods_MOAttributedTextView.framework */; };
 		C022E6FA2578E5840015D2F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022E6F92578E5840015D2F6 /* AppDelegate.swift */; };
 		C022E6FC2578E5840015D2F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022E6FB2578E5840015D2F6 /* SceneDelegate.swift */; };
 		C022E6FE2578E5840015D2F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022E6FD2578E5840015D2F6 /* ViewController.swift */; };
@@ -14,9 +15,15 @@
 		C022E7032578E5870015D2F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C022E7022578E5870015D2F6 /* Assets.xcassets */; };
 		C022E7062578E5870015D2F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C022E7042578E5870015D2F6 /* LaunchScreen.storyboard */; };
 		C022E70F2578E5B10015D2F6 /* MOAttributedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C022E70E2578E5B10015D2F6 /* MOAttributedTextView.swift */; };
+		E0C2EFDD257D2272007732AB /* MOTest1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C2EFDC257D2272007732AB /* MOTest1ViewController.swift */; };
+		E0C2EFE0257D2280007732AB /* MOTest2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C2EFDF257D2280007732AB /* MOTest2ViewController.swift */; };
+		E0C2EFE3257D29CC007732AB /* MOTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C2EFE2257D29CC007732AB /* MOTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B533420932D547113252FEA /* Pods_MOAttributedTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MOAttributedTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		584109C12BDDADFC83E62C77 /* Pods-MOAttributedTextView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MOAttributedTextView.release.xcconfig"; path = "Target Support Files/Pods-MOAttributedTextView/Pods-MOAttributedTextView.release.xcconfig"; sourceTree = "<group>"; };
+		B40E15659761F8BBCE26F455 /* Pods-MOAttributedTextView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MOAttributedTextView.debug.xcconfig"; path = "Target Support Files/Pods-MOAttributedTextView/Pods-MOAttributedTextView.debug.xcconfig"; sourceTree = "<group>"; };
 		C022E6F62578E5840015D2F6 /* MOAttributedTextView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOAttributedTextView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C022E6F92578E5840015D2F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C022E6FB2578E5840015D2F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +33,9 @@
 		C022E7052578E5870015D2F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C022E7072578E5870015D2F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C022E70E2578E5B10015D2F6 /* MOAttributedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOAttributedTextView.swift; sourceTree = "<group>"; };
+		E0C2EFDC257D2272007732AB /* MOTest1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOTest1ViewController.swift; sourceTree = "<group>"; };
+		E0C2EFDF257D2280007732AB /* MOTest2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOTest2ViewController.swift; sourceTree = "<group>"; };
+		E0C2EFE2257D29CC007732AB /* MOTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +43,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				949B30B47449AC74DB08EA5C /* Pods_MOAttributedTextView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9561FEBEF901E78854FC79AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B533420932D547113252FEA /* Pods_MOAttributedTextView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C022E6ED2578E5840015D2F6 = {
 			isa = PBXGroup;
 			children = (
 				C022E6F82578E5840015D2F6 /* MOAttributedTextView */,
 				C022E6F72578E5840015D2F6 /* Products */,
+				C3130F01E270FE1A2FDAF6BF /* Pods */,
+				9561FEBEF901E78854FC79AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +82,9 @@
 				C022E6F92578E5840015D2F6 /* AppDelegate.swift */,
 				C022E6FB2578E5840015D2F6 /* SceneDelegate.swift */,
 				C022E6FD2578E5840015D2F6 /* ViewController.swift */,
+				E0C2EFDC257D2272007732AB /* MOTest1ViewController.swift */,
+				E0C2EFDF257D2280007732AB /* MOTest2ViewController.swift */,
+				E0C2EFE2257D29CC007732AB /* MOTableViewCell.swift */,
 				C022E70E2578E5B10015D2F6 /* MOAttributedTextView.swift */,
 				C022E6FF2578E5840015D2F6 /* Main.storyboard */,
 				C022E7022578E5870015D2F6 /* Assets.xcassets */,
@@ -70,6 +94,16 @@
 			path = MOAttributedTextView;
 			sourceTree = "<group>";
 		};
+		C3130F01E270FE1A2FDAF6BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B40E15659761F8BBCE26F455 /* Pods-MOAttributedTextView.debug.xcconfig */,
+				584109C12BDDADFC83E62C77 /* Pods-MOAttributedTextView.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +111,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C022E70A2578E5870015D2F6 /* Build configuration list for PBXNativeTarget "MOAttributedTextView" */;
 			buildPhases = (
+				11C84670968152FC507A9BA7 /* [CP] Check Pods Manifest.lock */,
 				C022E6F22578E5840015D2F6 /* Sources */,
 				C022E6F32578E5840015D2F6 /* Frameworks */,
 				C022E6F42578E5840015D2F6 /* Resources */,
+				B2B8FA6E93D9F442C39D8DCF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,15 +171,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		11C84670968152FC507A9BA7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MOAttributedTextView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2B8FA6E93D9F442C39D8DCF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MOAttributedTextView/Pods-MOAttributedTextView-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MOAttributedTextView/Pods-MOAttributedTextView-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MOAttributedTextView/Pods-MOAttributedTextView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C022E6F22578E5840015D2F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0C2EFDD257D2272007732AB /* MOTest1ViewController.swift in Sources */,
 				C022E6FE2578E5840015D2F6 /* ViewController.swift in Sources */,
+				E0C2EFE3257D29CC007732AB /* MOTableViewCell.swift in Sources */,
 				C022E70F2578E5B10015D2F6 /* MOAttributedTextView.swift in Sources */,
 				C022E6FA2578E5840015D2F6 /* AppDelegate.swift in Sources */,
 				C022E6FC2578E5840015D2F6 /* SceneDelegate.swift in Sources */,
+				E0C2EFE0257D2280007732AB /* MOTest2ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +368,7 @@
 		};
 		C022E70B2578E5870015D2F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B40E15659761F8BBCE26F455 /* Pods-MOAttributedTextView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -306,6 +388,7 @@
 		};
 		C022E70C2578E5870015D2F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 584109C12BDDADFC83E62C77 /* Pods-MOAttributedTextView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
