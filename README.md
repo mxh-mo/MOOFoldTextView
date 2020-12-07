@@ -6,9 +6,13 @@ Test1：直接使用效果如下：
 
 <img src="./Test1-OpenAndClose.gif" style="zoom:80%;" align="left" />
 
+----
+
 Test2：在TableViewCell里使用效果如下：
 
 <img src="./Test2-OpenAndClose-Cell.gif" style="zoom:80%;" align="left" />
+
+----
 
 # 2、How to use
 
@@ -55,7 +59,7 @@ func moTextViewHeightChanged(_ height: CGFloat) {
 }
 ```
 
-
+----
 
 ## 2)、Use in cell
 
