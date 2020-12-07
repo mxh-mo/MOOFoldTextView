@@ -138,8 +138,8 @@ final class MOAttributedTextView: UITextView {
     // You can delete this method if you don't need it
     class func calculateHeight(text: String, closeText: String, font: UIFont, lineSpacing: CGFloat, width: CGFloat, lessLine: Int, closure: (_ closeHeight: CGFloat, _ openHeight: CGFloat) -> Void) {
         let lineHeight = lineSpacing + font.lineHeight
-        let rect = NSString(string: text + closeText).boundingRect(with: CGSize(width: width-8, height: CGFloat.greatestFiniteMagnitude), options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
         // get height according font and width
+        let rect = NSString(string: text + closeText).boundingRect(with: CGSize(width: width-8, height: CGFloat.greatestFiniteMagnitude), options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
         let height = rect.height
         // get line number according height and lineHeight
         let allLine = Int(floor(height / font.lineHeight))
