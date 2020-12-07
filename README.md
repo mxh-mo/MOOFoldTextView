@@ -4,13 +4,13 @@
 
 Test1：直接使用效果如下：
 
-<img src="./Test1-OpenAndClose.gif" style="zoom:80%;" align="left" />
+<img src="./Test1-OpenAndClose.gif" style="zoom:80%;" />
 
 ----
 
 Test2：在TableViewCell里使用效果如下：
 
-<img src="./Test2-OpenAndClose-Cell.gif" style="zoom:80%;" align="left" />
+<img src="./Test2-OpenAndClose-Cell.gif" style="zoom:80%;" />
 
 ----
 
