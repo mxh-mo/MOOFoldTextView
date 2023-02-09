@@ -17,7 +17,6 @@ class MOTest2ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         title = "Test2-TableView"
         test2()
     }

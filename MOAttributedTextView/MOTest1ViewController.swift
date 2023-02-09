@@ -11,7 +11,6 @@ class MOTest1ViewController: UIViewController, MOAttributedTextViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         title = "Test1"
         test1()
     }

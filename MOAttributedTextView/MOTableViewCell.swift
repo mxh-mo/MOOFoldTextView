@@ -28,6 +28,7 @@ final class MOTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        contentView.backgroundColor = .gray
         // 2. Set some parameters as required
         let font: UIFont = .systemFont(ofSize: 16)
         let attributs: [NSAttributedString.Key : Any] = [
@@ -44,6 +45,7 @@ final class MOTableViewCell: UITableViewCell {
         moTextView.moParagraph = pargraphStyle // defaut：NSMutableParagraphStyle()
         moTextView.moIsOpen = false
         moTextView.moDelegate = self
+        moTextView.backgroundColor = .cyan
         contentView.addSubview(moTextView)
         moTextView.snp.makeConstraints { (make) in
             make.top.bottom.equalToSuperview()
