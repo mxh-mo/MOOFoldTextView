@@ -7,13 +7,13 @@
 
 ## 1. Effect display
 
-Test1：直接使用效果如下：
+Test1：Direct Use：
 
 <img src="./Test1-OpenAndClose.gif" style="zoom:80%;" />
 
 ----
 
-Test2：在TableViewCell里使用效果如下：
+Test2：Use in cell：
 
 <img src="./Test2-OpenAndClose-Cell.gif" style="zoom:80%;" />
 
@@ -36,7 +36,7 @@ import MOOFoldTextView
 
 ## 4. Usage
 
-### 4.1.Direct Use
+### 4.1 Direct Use
 
 ```swift
 // 1.1 init view
