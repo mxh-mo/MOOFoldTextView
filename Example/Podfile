@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'MOOFoldTextView_Example' do
+  pod 'MOOFoldTextView', :path => '../'
+
+  target 'MOOFoldTextView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

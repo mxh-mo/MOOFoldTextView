@@ -1,0 +1,16 @@
+PODS:
+  - MOOFoldTextView (0.1.0)
+
+DEPENDENCIES:
+  - MOOFoldTextView (from `../`)
+
+EXTERNAL SOURCES:
+  MOOFoldTextView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MOOFoldTextView: 49a0b6f50da065f06deeb97e662f44912c6ac57e
+
+PODFILE CHECKSUM: 3ade11469e0f860d9af66e0834aa6d2b7ea9589c
+
+COCOAPODS: 1.13.0
