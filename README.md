@@ -47,7 +47,7 @@ private lazy var mooFoldTextView: MOOFoldTextView = {
     return view
 }()
 // 1.2 init conifg
-private lazy var attributeTextConfig: MOOFoldTextConfig = {
+private lazy var mooFoldTextConfig: MOOFoldTextConfig = {
     let config = MOOFoldTextConfig()
     config.allText =
     """
@@ -72,7 +72,7 @@ self.mooFoldTextView.mooReloadText()
 self.mooFoldTextView.frame = CGRect(x: 0.0,
                                     y: 100.0,
                                     width: CGRectGetWidth(self.view.bounds),
-                                    height: self.mooFoldTextConfig.mooCurrentHeight())
+                                    height: self.mooFoldTextConfig.currentHeight())
        
 // 4 Implement Proxy
 extension MOOTest1ViewController: MOOFoldTextViewDelegate {
